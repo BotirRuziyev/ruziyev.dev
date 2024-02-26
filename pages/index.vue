@@ -85,6 +85,31 @@
   line-height: 1;
   color: #4d5bce;
   font-family: "Fira Code Retina";
+  border-right: 3px solid hsla(0, 0%, 100%, 0.75);
+  overflow: hidden;
+  padding-right: 2px;
+  white-space: nowrap;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: fit-content;
+  animation: typewriter 3.5s steps(40) 1s 1 normal both, blinkTextCursor 1s steps(40) infinite normal;
+}
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes blinkTextCursor {
+  0% {
+    border-right-color: #ffffffbf;
+  }
+
+  100% {
+    border-right-color: transparent;
+  }
 }
 
 .head {
@@ -183,7 +208,8 @@
     margin: 1.75rem; /* 28px */
   }
   .head {
-    padding-top: 4rem; /* 40px */
+    padding-top: 2rem; /* 40px */
+    padding-bottom: 0;
   }
 
   #hello .head h2 {

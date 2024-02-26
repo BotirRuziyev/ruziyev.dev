@@ -79,10 +79,10 @@
                 "url": "https://facebook.com/",
                 "user": "ruziyev.dev"
             },
-            "twitter": {
-                "title": "Twitter account",
-                "url": "https://twitter.com/",
-                "user": "ruziyev.dev"
+            "telegram": {
+                "title": "Telegram account",
+                "url": "https://t.me/",
+                "user": "ruziyevdev"
             }
         },
         "find_me_also_in": {
