@@ -9,21 +9,21 @@
           target="_blank"
           class="flex justify-center items-center"
         >
-          <img src="/icons/social/telegram.svg" />
+          <img src="/icons/social/telegram.webp" />
         </NuxtLink>
         <NuxtLink
           :to="social.facebook.url + social.facebook.user"
           target="_blank"
           class="flex justify-center items-center"
         >
-          <img src="/icons/social/facebook.svg" />
+          <img src="/icons/social/facebook.webp" />
         </NuxtLink>
         <NuxtLink
           :to="social.github.url + social.github.user"
           target="_blank"
           class="flex md:hidden justify-center items-center"
         >
-          <img src="/icons/social/github.svg" />
+          <img src="/icons/social/github.webp" />
         </NuxtLink>
       </div>
     </div>
@@ -35,7 +35,7 @@
       class="hidden md:flex items-center px-5 border-left"
     >
       @{{ social.github.user }}
-      <img src="/icons/social/github.svg" />
+      <img src="/icons/social/github.webp" />
     </NuxtLink>
   </footer>
 </template>
@@ -58,7 +58,6 @@ footer a:hover {
 }
 
 #social-icons > a > img {
-  width: 1.25rem; /* 20px */
   height: 1.25rem; /* 20px */
   margin: auto;
   opacity: 0.4;
@@ -66,7 +65,6 @@ footer a:hover {
 }
 
 footer > a > img {
-  width: 1.25rem; /* 20px */
   height: 1.25rem; /* 20px */
   margin-left: 0.5rem; /* 8px */
 }
@@ -86,7 +84,6 @@ footer > a > img {
   }
 
   #social-icons > a > img {
-    width: 1.5rem; /* 20px */
     height: 1.5rem; /* 20px */
   }
 }

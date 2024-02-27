@@ -297,7 +297,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.config.dev.name);
     // Detectamos si es mobile
     if (window.innerWidth <= 1024) {
       this.isMobile = true;
