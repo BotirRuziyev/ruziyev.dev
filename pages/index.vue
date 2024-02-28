@@ -12,275 +12,37 @@
       </div>
 
       <div id="info">
-        <span class="action"> // complete the game to continue </span>
-        <span :class="{ hide: isMobile }"> // you can also see it on my Github page </span>
-        <span :class="{ hide: !isMobile }"> // find my profile on Github: </span>
+        <span class="action">// complete the game to continue </span>
+        <span :class="{ hide: isMobile }">
+          // you can also see it on my Github page
+        </span>
+        <span :class="{ hide: !isMobile }">
+          // find my profile on Github:
+        </span>
         <p class="code">
           <span class="identifier"> const </span>
           <span class="variable-name"> githubLink </span>
           <span class="operator"> = </span>
-          <a class="string" :href="'https://github.com/' + config.public.dev.contacts.social.github.user">
-            "https://github.com/{{ config.public.dev.contacts.social.github.user }}"
+          <a
+            :href="
+              'https://github.com/' +
+              config.public.dev.contacts.social.github.user
+            "
+            class="string"
+          >
+            "https://github.com/{{
+              config.public.dev.contacts.social.github.user
+            }}"
           </a>
         </p>
       </div>
     </section>
 
-    <section data-aos="fade-up" class="game" v-if="!isMobile">
+    <section v-if="!isMobile" class="game" data-aos="fade-up">
       <SnakeGame />
     </section>
   </main>
 </template>
-
-<style>
-#hello {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  flex: 1 1 auto;
-  padding-left: 275px;
-  overflow: hidden;
-  /* padding-top: 5rem; */ /* 80px */
-}
-.hero {
-  width: 100%;
-  justify-content: center;
-}
-.game {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  /* 	align-items: center; */
-  z-index: 20;
-}
-
-#hello .hero {
-  display: flex;
-  flex-direction: column;
-  /* display: grid;
-	grid-template-columns: repeat(12, minmax(0, 1fr)); */
-  margin: 0rem;
-}
-
-#hello .head span {
-  font-size: 18px;
-  line-height: 1;
-  color: #e5e9f0;
-  font-family: "Fira Code Retina";
-}
-
-#hello .head h1 {
-  font-size: 58px;
-  line-height: 1;
-  color: #e5e9f0;
-  font-family: "Fira Code Regular";
-  padding-top: 1rem; /* 16px */
-  padding-bottom: 1rem; /* 16px */
-}
-
-#hello .head h2 {
-  font-size: 32px;
-  line-height: 1;
-  color: #4d5bce;
-  font-family: "Fira Code Retina";
-  border-right: 3px solid hsla(0, 0%, 100%, 0.75);
-  overflow: hidden;
-  padding-right: 2px;
-  white-space: nowrap;
-  width: -moz-fit-content;
-  width: fit-content;
-  max-width: fit-content;
-  animation: typewriter 3.5s steps(40) 1s 1 normal both, blinkTextCursor 1s steps(40) infinite normal;
-}
-@keyframes typewriter {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@keyframes blinkTextCursor {
-  0% {
-    border-right-color: #ffffffbf;
-  }
-
-  100% {
-    border-right-color: transparent;
-  }
-}
-
-.head {
-  padding-bottom: 3rem;
-}
-
-#info {
-  display: flex;
-  flex-direction: column;
-}
-
-#info > span {
-  font-size: 14px;
-  line-height: 1;
-  color: #607b96;
-  font-family: "Fira Code Retina";
-  padding-bottom: 1rem; /* 16px */
-}
-
-.code {
-  font-family: "Fira Code Medium";
-  color: #e5e9f0;
-}
-
-.code .identifier {
-  color: #4d5bce;
-}
-
-.code .variable-name {
-  color: #43d9ad;
-}
-
-.code .operator {
-  color: white;
-}
-
-.code .string {
-  color: #e99287;
-  text-decoration-line: underline;
-  text-underline-offset: 4px;
-}
-
-#info {
-  padding-block: 2.5rem;
-}
-
-#info .action {
-  display: flex;
-}
-
-.hide {
-  display: none;
-}
-
-.css-blurry-gradient-blue {
-  position: fixed;
-  bottom: 25%;
-  right: 5%;
-  width: 300px;
-  height: 300px;
-  border-radius: 0% 0% 50% 50%;
-  rotate: 10deg;
-  filter: blur(70px);
-  background: radial-gradient(circle at 50% 50%, rgba(77, 91, 206, 1), rgba(76, 0, 255, 0));
-  opacity: 0.5;
-  z-index: 10;
-}
-
-.css-blurry-gradient-green {
-  position: absolute;
-  top: 20%;
-  right: 30%;
-  width: 300px;
-  height: 300px;
-  border-radius: 0% 50% 0% 50%;
-  filter: blur(70px);
-  background: radial-gradient(circle at 50% 50%, rgba(67, 217, 173, 1), rgba(76, 0, 255, 0));
-  opacity: 0.5;
-  z-index: 10;
-}
-
-#info {
-  font-size: 14px;
-}
-
-/* mobile */
-@media (max-width: 768px) {
-  #hello {
-    padding-left: 0;
-  }
-
-  #hello .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 1.75rem; /* 28px */
-  }
-  .head {
-    padding-top: 2rem; /* 40px */
-    padding-bottom: 0;
-  }
-
-  #hello .head h2 {
-    font-size: 20px;
-    color: #43d9ad;
-  }
-
-  #info .action {
-    display: none;
-  }
-}
-
-/* tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-  #hello {
-    padding-left: 0;
-  }
-  #hello .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1.75rem; /* 28px */
-  }
-  .head {
-    padding-top: 4rem; /* 40px */
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1320px) {
-  #hello {
-    padding-left: 135px;
-  }
-}
-
-/* LG */
-
-@media (min-width: 1024px) {
-  .css-blurry-gradient-blue {
-    position: fixed;
-    bottom: 10%;
-    right: 10%;
-    width: 500px;
-    height: 500px;
-    opacity: 0.7;
-    border-radius: 100% 50% 100% 0%;
-  }
-
-  .css-blurry-gradient-green {
-    position: fixed;
-    top: 10%;
-    right: 35%;
-    filter: blur(100px);
-    rotate: 10deg;
-    width: 400px;
-    height: 400px;
-    opacity: 0.5;
-    border-radius: 100% 0% 0% 0%;
-    rotate: 20deg;
-  }
-}
-
-@media (min-width: 1920px) {
-  #hello {
-    padding-left: 310px;
-  }
-  #hello .head h1 {
-    font-size: 62px;
-  }
-}
-</style>
-
 <script>
 export default {
   name: "Hello",
@@ -323,3 +85,266 @@ export default {
   },
 };
 </script>
+
+<style>
+#hello {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex: 1 1 auto;
+  padding-left: 275px;
+  overflow: hidden;
+  /* padding-top: 5rem; */ /* 80px */
+}
+
+.hero {
+  width: 100%;
+  justify-content: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  /* 	align-items: center; */
+  z-index: 20;
+}
+
+#hello .hero {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+#hello .head span {
+  font-size: 18px;
+  line-height: 1;
+  color: #e5e9f0;
+  font-family: "Fira Code Retina", sans-serif;
+}
+
+#hello .head h1 {
+  font-size: 58px;
+  line-height: 1;
+  color: #e5e9f0;
+  font-family: "Fira Code Regular", sans-serif;
+  padding-top: 1rem; /* 16px */
+  padding-bottom: 1rem; /* 16px */
+}
+
+#hello .head h2 {
+  font-size: 32px;
+  line-height: 1;
+  color: #4d5bce;
+  font-family: "Fira Code Retina", sans-serif;
+  border-right: 3px solid hsla(0, 0%, 100%, 0.75);
+  overflow: hidden;
+  padding-right: 2px;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: fit-content;
+  animation:
+    typewriter 3.5s steps(40) 1s 1 normal both,
+    blinkTextCursor 1s steps(40) infinite normal;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blinkTextCursor {
+  0% {
+    border-right-color: #ffffffbf;
+  }
+
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+.head {
+  padding-bottom: 3rem;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+}
+
+#info > span {
+  font-size: 14px;
+  line-height: 1;
+  color: #607b96;
+  font-family: "Fira Code Retina", sans-serif;
+  padding-bottom: 1rem; /* 16px */
+}
+
+.code {
+  font-family: "Fira Code Medium", sans-serif;
+  color: #e5e9f0;
+}
+
+.code .identifier {
+  color: #4d5bce;
+}
+
+.code .variable-name {
+  color: #43d9ad;
+}
+
+.code .operator {
+  color: white;
+}
+
+.code .string {
+  color: #e99287;
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+}
+
+#info {
+  padding-block: 2.5rem;
+}
+
+#info .action {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.css-blurry-gradient-blue {
+  position: fixed;
+  bottom: 25%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 0 0 50% 50%;
+  rotate: 10deg;
+  filter: blur(70px);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(77, 91, 206, 1),
+    rgba(76, 0, 255, 0)
+  );
+  opacity: 0.5;
+  z-index: 10;
+}
+
+.css-blurry-gradient-green {
+  position: absolute;
+  top: 20%;
+  right: 30%;
+  width: 300px;
+  height: 300px;
+  border-radius: 0 50% 0 50%;
+  filter: blur(70px);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(67, 217, 173, 1),
+    rgba(76, 0, 255, 0)
+  );
+  opacity: 0.5;
+  z-index: 10;
+}
+
+#info {
+  font-size: 14px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  #hello {
+    padding-left: 0;
+  }
+
+  #hello .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1.75rem; /* 28px */
+  }
+
+  .head {
+    padding-top: 2rem; /* 40px */
+    padding-bottom: 0;
+  }
+
+  #hello .head h2 {
+    font-size: 20px;
+    color: #43d9ad;
+  }
+
+  #info .action {
+    display: none;
+  }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #hello {
+    padding-left: 0;
+  }
+
+  #hello .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1.75rem; /* 28px */
+  }
+
+  .head {
+    padding-top: 4rem; /* 40px */
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1320px) {
+  #hello {
+    padding-left: 135px;
+  }
+}
+
+/* LG */
+
+@media (min-width: 1024px) {
+  .css-blurry-gradient-blue {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    width: 500px;
+    height: 500px;
+    opacity: 0.7;
+    border-radius: 100% 50% 100% 0;
+  }
+
+  .css-blurry-gradient-green {
+    position: fixed;
+    top: 10%;
+    right: 35%;
+    filter: blur(100px);
+    width: 400px;
+    height: 400px;
+    opacity: 0.5;
+    border-radius: 100% 0 0 0;
+    rotate: 20deg;
+  }
+}
+
+@media (min-width: 1920px) {
+  #hello {
+    padding-left: 310px;
+  }
+
+  #hello .head h1 {
+    font-size: 62px;
+  }
+}
+</style>
